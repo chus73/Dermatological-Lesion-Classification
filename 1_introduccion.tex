@@ -8,11 +8,21 @@
 %%%%%%%%%%%%%%%%%%%
 %%% Motivation %%%
 %%%%%%%%%%%%%%%%%%%
-This journey towards the realisation of this exciting work on dermoscopic classification of skin disease is a path that combines science, technology and medical care in a unique way. This project is much more than a task at the end of a long master's journey; it is a challenge and an opportunity.
+This journey towards the realisation of this exciting work on dermoscopic classification of skin disease is a path that combines science, technology and medical care in a unique way. 
 
-This job represents a challenge, working with large image files which require pre-processing of data. Added to this is the development of a classification model that must distinguish between nine different patterns. All these points are compounded by the fact of doing the work in a language that is not my mother tongue.
+Artificial Intelligence (AI) is bringing about a fourth industrial revolution that is already affecting our society. Specifically, its incorporation in the area of medicine has a very significant impact on different fronts (\cite{luciaclemares_que_2023} y \cite{apd_aplicaciones_IA_Medicina}):
+
+\begin{itemize}
+    \item \textbf{A more accurate and faster diagnosis}: The use of advanced search techniques on large medical data sets allows for more accurate and reliable diagnoses. 
+    \item \textbf{Faster and more efficient drug development}: Accelerating the research and development of new drugs.
+    \item \textbf{Personalised care}: AI can customise treatment plans to patients' individual needs, optimising effectiveness and minimising side effects
+    \item \textbf{Accuracy and speed in diagnostic imaging}. Deep networks specialised in image recognition have a pattern detection capability that is far superior to that of humans. They can also make a diagnosis with very little delay. For all these reasons, they will be an essential tool for improving patient care. 
+\end{itemize}
+
+It is this last point that is related to the scope of this project. Personally, this project is much more than a task at the end of a long master's journey. This job represents a challenge, working with large image files which require pre-processing of data. Added to this is the development of a classification model that must distinguish between nine different patterns.
 
 On the other hand, it also represents an opportunity to imagine that my work could one day help in the early detection of skin disease, and thus improve medical care.
+
 
 
 \section{Goals}
@@ -24,11 +34,11 @@ On the other hand, it also represents an opportunity to imagine that my work cou
 The main objective of this project is the classification of dermoscopic images. This challenge can be separated into two points
 
 \begin{itemize}
-    \item On the one hand, to distinguish dermatological skin lesions.
-    \item Secondly, to classify these lesions into one of nine classes to be studied.
+    \item On the one hand, to analyse the current \textbf{state of the art} in automatic medical detection by imaging.
+    \item Secondly, to \textbf{classify these lesions into one of nine classes} to be studied.
 \end{itemize}
 
-In parallel, the dataset contains a metadata file. This information can help to segment the source information according to the types of dermoscopic techniques used. Therefore, this provides us with a secondary objective by allowing us to make a reliability ranking according to the technique used. 
+In parallel, the dataset contains a metadata file. This information can help to segment the source information according to the types of dermoscopic techniques used. Therefore, this provides us with a \textbf{secondary objective} by allowing us to make a reliability ranking according to the technique used. 
 
 
 \section{Methodology}
@@ -37,11 +47,11 @@ In parallel, the dataset contains a metadata file. This information can help to 
 %%% Methodology %%%
 %%%%%%%%%%%%%%%%%%%
 
-For the implementation of this project, we will use the Cross Industry Standard Process for Data Mining or\textbf{CRISP-DM} methodology. This methodology consists of six phases that are carried out cyclically and that allow feedback to previous phases in order to complement the deficiencies of other phases. The following diagram shows the cyclical circuit of the six phases of this methodology.
+For the implementation of this project, we will use the Cross Industry Standard Process for Data Mining or \textbf{CRISP-DM} methodology. This methodology consists of six phases that are carried out cyclically and that allow feedback to previous phases in order to complement the deficiencies of other phases. The following diagram shows the cyclical circuit of the six phases of this methodology.
 
 \begin{figure}[h]
     \begin{center}
-        \includegraphics[scale=0.40]{images/CRISP-DM_Process_Diagram.png}
+        \includegraphics[scale=0.60]{images/CRISP-DM_Process_Diagram.png}
         \caption{Process diagram showing the phases of the CRISP-DM methodology}
     \label{fig:CRISP-DM}    
     \end{center}
@@ -52,12 +62,39 @@ The methodology phases and the adaptation to the project are described below:
 \begin{enumerate}
     \item \textbf{Business understanding}
     
-    The first phase of the \textbf{CRISP-DM} model starts with understanding the main objectives of the project. This is covered in the Goals section of the document. In this case, there is \textbf{no associated licensing cost}, because the data is left under an open licence (see Licensing section).
+    The first phase of the \textbf{CRISP-DM} model starts with understanding the project's main objectives. This is covered in the \textbf{ Goals section} of the document. It is at this stage of the project that licensing costs are reviewed. In this case, there is \textbf{no associated licensing cost}, because the data is left under an open licence (see \textbf{Licensing section}). Furthermore, the project plan is also created during this phase (see \textbf{project plan section}).
     \item \textbf{Data understanding}
+    
+    At a general level, this phase seeks to become familiar with the understanding of the data, identify quality problems and discover hidden information or interesting subsets of the data to be processed, which allows a view from different perspectives. An important point will be to verify the quality of the data in order to define the required strategies to address them. At the end of this phase, we will already have a conceptual model of the data.
+
+    As the images to be used as a data source are produced in a medical environment, they are expected to be of high quality. However, this will be validated in the early stages of the project.
+
+        
     \item \textbf{Data Preparation}
+
+    In this section, following the \textbf{CRISP-DM} method, a selection and integration of the main data together with their required attributes is carried out. In addition, the data will be cleaned and formatted if required, looking for the main fields or main characteristics.
+
+    Our project has the challenge of working with heavy input data (around 21 GB). Therefore, one of the first tasks will be \textbf{resizing} the data in order to reduce the size in order to work with a more manageable dataset. On the other hand, we will look at using some \textbf{data augmentation} techniques to help us avoid overfitting. 
+    
     \item \textbf{Modelling}
+
+    In this phase, the modelling techniques required to achieve an optimal data model are applied. As shown in the phase diagram, it is a phase that usually builds on the data preparation phase, either to solve problems or to enrich the data. In addition to model building, some model evaluation techniques will be required.
+
+    
     \item \textbf{Evaluation}
+
+    Once the models required to achieve the objectives set in the initial phase have been obtained, an evaluation must be carried out to ensure that these objectives are met. This is done using the test plan designed in the previous phase. If necessary, the process will be reviewed and, depending on the results, the next steps will be determined. A benchmark is carried out between the various models created, and the champion model is selected. 
+
+    
     \item \textbf{Deployment}
+
+    Once the model has passed all the tests and has been approved, it is required to define a plan for its deployment. Thus, the creation of a final model is not the end of the project, but rather a milestone within it. A model put into production needs to be monitored and maintained. In addition, it is advisable to publish results that help to understand whether the objectives initially requested in phase 1 have been achieved. It is quite common that after the project has been put into production, new expectations are generated that make the model (project) generated be reconsidered. This is why \textbf{CRISP-DM} describes the life cycle of the data mining project in a circular environment, where the output feeds back into a new cycle that seeks the continuous improvement of the business.
+
+    Our project is part of a work that will develop a minimum viable product. Finally, the champion model will be run on the test dataset to obtain the final metrics.
+
+As for the project follow-up, being a project structured by phases where no changes are expected in the definition of each one of them, and where the beginnings and ends of each phase are very well defined, a \textbf{waterfall model} is a better approach than other agile strategies.
+
+    
 \end{enumerate}
 
 
@@ -66,7 +103,7 @@ The methodology phases and the adaptation to the project are described below:
 %%%%%%%%%%%%%%%%%%%
 %%% Planning %%%
 %%%%%%%%%%%%%%%%%%%
-The project has been structured in five phases or modules, which in turn are broken down into tasks. This section describes the project's planning and its main milestones. 
+The project has been structured in \textbf{five phases} or modules, which in turn are broken down into tasks. This section describes the project's planning and its main milestones. 
 \begin{itemize}
     \item \textbf{Module 1 - Project definition} 
     
@@ -108,15 +145,17 @@ The following table shows each of the phases, the start and end dates, as well a
         \bottomrule
     \end{tabular}%
     }
+    \caption{Project Timetable.}
+    \label{table:Timetable}
 \end{table}
 
 
 
-The following Gantt graph shows the project's evolution.
+The time evolution of the project is shown by the following Gantt graph.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \begin{center}
-        \includegraphics[scale=0.40]{images/TFM_Planing.jpg}
+        \includegraphics[scale=0.43]{images/TFM_Planing.jpg}
         \caption{Gantt chart of the Master's final project}
     \label{fig:Gantt}    
     \end{center}
