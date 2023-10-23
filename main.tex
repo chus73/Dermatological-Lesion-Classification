@@ -1,8 +1,14 @@
 \documentclass[12pt,a4paper,twoside]{book}
 \usepackage{graphicx}
 \usepackage{setspace} %double spacing for text, single for captions, footnotes, etc.
+
+% Bibliography package
 %\usepackage{hypernat} %substitute for cite that allows hyperlinks
 \usepackage{natbib} % substitute for 'hypernat' that works on Windows.
+%\usepackage[backend=biber,
+%    style=numeric]{biblatex}
+%\addbibresource{referencias.bib} %Imports bibliography file
+
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{color}
@@ -10,7 +16,7 @@
 \usepackage{multirow}
 \usepackage{subfigure}
 \usepackage{acronym}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage{amsmath,amsmath,amssymb}
 \usepackage{fancyhdr}
 \usepackage{epsfig, amsmath}
@@ -18,6 +24,7 @@
 \usepackage{algorithmic}
 \usepackage{booktabs}
 
+\usepackage[hidelinks]{hyperref}
 
 
 % general settings
@@ -105,12 +112,10 @@ citecolor=blue,
 % bibliography %
 %%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{Bibliography}
+%\bibliographystyle{plain} % Original style of template. 
 \bibliographystyle{plain}
-%\bibliographystyle{ACM-Reference-Format}
-
-
 \bibliography{referencias}
+%\printbibliography
 
-%\bibliography{Dermatological-lesion-classification}
 
 \end{document}
