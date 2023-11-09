@@ -3,6 +3,8 @@
 
 %%% SECTION
 
+
+
 \section{Motivation}
 
 %%%%%%%%%%%%%%%%%%%
@@ -16,7 +18,7 @@ Artificial Intelligence (AI) is bringing about a fourth industrial revolution th
     \item \textbf{A more accurate and organised diagnosis}: The use of advanced search techniques on large medical data sets allows for more accurate and reliable diagnostic. 
     \item \textbf{Faster and more efficient drug development}: Accelerating the research and development of new drugs.
     \item \textbf{Personalised care}: AI can customise treatment plans for each patient's individual needs optimising, at the same time, effectiveness and minimising side effects.
-    \item \textbf{Images diagnostic more accurate and faster}. The worldwide name of AI will be recognised henceforth in this work as Deep networks. A part of these networks is specialised image recognition. They have a pattern detection capability that is by far superior to any human being. They can also make a diagnosis with a very little delay. For the aforementioned reasons, it will be an essential tool for improving patient care and treatment. 
+    \item \textbf{Images diagnostic more accurate and faster}. The worldwide name of AI will be recognised henceforth in this work as Deep networks. A part of these networks is specialised image recognition. They have a pattern detection capability that is by far superior to any human being. They can also make a diagnosis with very little delay. For the aforementioned reasons, it will be an essential tool for improving patient care and treatment. 
 \end{itemize}
 
 This last point is the core of the scope of this project. Personally, this project is much more than a task for ending a long master's journey. This job represents a challenge because working with large image files requires pre-processed data. In addition to this, the model to be developed is a classification one that should distinguish among nine different patterns.
@@ -47,7 +49,7 @@ In parallel, the dataset contains a metadata file. This information can help to 
 %%% Methodology %%%
 %%%%%%%%%%%%%%%%%%%
 
-For the implementation of this project, we will use the Cross Industry Standard Process for Data Mining or \textbf{CRISP-DM} methodology. This methodology consists of six phases that are cyclically carried out and it allows feedback to previous phases in order to complement the deficiencies of other phases. The following diagram (figure 1.1) shows the six phases cyclical circuit to be used in this methodology.
+For the implementation of this project, we will use the Cross Industry Standard Process for Data Mining or \textbf{CRISP-DM} methodology. This methodology consists of six phases that are cyclically carried out and it allows feedback to previous phases in order to complement the deficiencies of other phases. The following diagram (figure 1.1) shows the six-phase cyclical circuit to be used in this methodology.
 
 \begin{figure}[ht]
     \begin{center}
@@ -57,42 +59,44 @@ For the implementation of this project, we will use the Cross Industry Standard 
     \end{center}
 \end{figure}
 
+
 The methodology phases and the adaptation to the project are described below:
 
 \begin{enumerate}
     \item \textbf{Business understanding}
     
     The first phase of the \textbf{CRISP-DM} model starts understanding the project's main objectives. These are mentioned in the \textbf{ Goals section} above. At this stage of the project, licensing costs are reviewed. Concerning licensing cost in this project there is \textbf{no associated licensing cost}, because the data is left under an open licence (see \textbf{Licensing section}). Furthermore, the project plan is also created during this phase (see \textbf{project plan section}).
+
     \item \textbf{Data understanding}
     
-    At a general level, this phase seeks to become familiar with the understanding of the data, identify quality problems and discover hidden information or interesting subsets of the data to be processed, which allows a view from different perspectives. An important point will be to verify the quality of the data in order to define the required strategies to address them. At the end of this phase, we will already have a conceptual model of the data.
+    Typically, this phase seeks to become familiar with the understanding of the data, identifying quality problems and discover hidden information or interesting subsets of the data to be processed. This allows to have point of view. A key aspect will be to verify the quality, in order to define all required strategies to address them. At the end of this phase, we will already have a conceptual data model.
 
     As the images to be used as a data source are produced in a medical environment, they are expected to be of high quality. However, this will be validated in the early stages of the project.
 
         
     \item \textbf{Data Preparation}
 
-    In this section, following the \textbf{CRISP-DM} method, a selection and integration of the main data together with their required attributes is carried out. In addition, the data will be cleaned and formatted if required, looking for the main fields or characteristics.
+    In this section, applying the \textbf{CRISP-DM} method, a selection and integration of the main data together with their required attributes will be carried out. Moreover, data will be cleaned and formatted if required, looking for the main fields or characteristics of the data.
 
-    Our project has the challenge of working with heavy input data (around 21 GB). Therefore, one of the first tasks will be \textbf{resizing} the data to reduce the size and work with a more manageable dataset. On the other hand, we will look at using some \textbf{data augmentation} techniques to help us avoid overfitting. 
+    Our project has the challenge of working with \textbf{large data input} (around 21 GB). Therefore, one of the first tasks will be \textbf{resizing} the data to reduce the size and work with a more manageable dataset. On the contrary, we will look at using some \textbf{data augmentation} techniques to help us avoid overfitting. 
     
     \item \textbf{Modelling}
 
-    In this phase, the modelling techniques required to achieve an optimal data model are applied. As shown in the phase diagram, it is a phase that usually builds on the data preparation phase, either to solve problems or to enrich the data. In addition to model building, some model evaluation techniques will be required.
+    In this phase, the modelling techniques required to achieve an optimal data model will be applied. As it is  shown in the phase diagram, it is a phase that usually builds on the data preparation phase, either to solve problems or to enrich the data. Additionally to model building, some model evaluation techniques will be required. As a result, a test plan document will be done.
 
     
     \item \textbf{Evaluation}
 
-    Once the models required to achieve the objectives set in the initial phase have been obtained, an evaluation must be carried out to ensure that these objectives are met. This is done using the test plan designed in the previous phase. If necessary, the process will be reviewed and, depending on the results, the next steps will be determined. A benchmark is carried out between the various models created, and the champion model is selected. 
+    Once the objectives set requiered, during the initial phases have been obtained, an evaluation must be carried out to ensure that them were reached. This is done using the test plan designed in the previous phase. If necessary, the process will be reviewed and, depending on the results, the next steps will be planned. A benchmark well be carried out amont various models created, and the outstanding model is selected. 
 
     
     \item \textbf{Deployment}
 
-    Once the model has passed all the tests and has been approved, it is required to define a plan for its deployment. Thus, the creation of a final model is not the end of the project, but rather a milestone within it. A model put into production needs to be monitored and maintained. In addition, it is advisable to publish results that help to understand whether the objectives initially requested in phase 1 have been achieved. It is quite common that after the project has been put into production, new expectations are generated that make the model (project) generated be reconsidered. This is why \textbf{CRISP-DM} describes the life cycle of the data mining project in a circular environment, where the output feeds back into a new cycle that seeks the continuous improvement of the business.
+    At the time, the model has passed all the tests and has been approved, it is required to define a plan for its deployment. Thus, creating a final model is not the end of the project, but rather a milestone within it. A model put into production environment it is necesary to monitor and maintain constantly. Along with the previous, it is advisable to publish results that help to understand whether the objectives initially requested in phase 1 have been achieved. It is quite common that after the project has been put into production, new expectations are generated that make the model (project) generated be reconsidered. This is why \textbf{CRISP-DM} describes the life cycle for the data mining project in a circular framework, where the output feeds back into a new cycle that seeks the continuous improvement of the business.
 
-    Our project is part of a work that will develop a minimum viable product. Finally, the champion model will be run on the test dataset to obtain the final metrics.
+    Our project is part of a work that will develop a minimum viable product. Finally, the outstanding model will be run on the dataset test to obtain the final metrics.
 
-As for the project follow-up, being a project structured by phases where no changes are expected in the definition of each one of them, and where the beginnings and ends of each phase are very well defined, a \textbf{waterfall model} is a better approach than other agile strategies.
+After the project is structured by phases where no changes are expected in the definition of each one of them, and where the beginnings and ends of each phase are very well defined, a \textbf{waterfall model} is a better approach than other \textbf{agile strategies} for the project follow-up.
 
     
 \end{enumerate}
@@ -103,20 +107,20 @@ As for the project follow-up, being a project structured by phases where no chan
 %%%%%%%%%%%%%%%%%%%
 %%% Planning %%%
 %%%%%%%%%%%%%%%%%%%
-The project has been structured in \textbf{five phases} or modules, which in turn are broken down into tasks. This section describes the project's planning and its main milestones. 
+The project has been structured in \textbf{five phases} or modules, which in turn are broken down into smaller tasks. This section describes the project's planning and its main milestones. 
 \begin{itemize}
     \item \textbf{Module 1 - Project definition} 
     
-    This module starts with the definition of the project plan: the relevant objectives of the project, the initial planning that will form the basis of the project, and the personal motivation to carry out the project on the chosen topic. During this phase, the abstract of the work will also be written and the "Ethical and personal data protection protocol" will be presented.
+    This module starts defining the project's plan: the relevant objectives of the project, the initial planning that will form the basis of the project, and the personal motivation to carry out the project on the chosen topic. During this phase, the form "Ethical and personal data protection protocol" will be filled out and presented.
     \item \textbf{Module 2 - State of Art}
     
-    During the time of this module, we will carry out a research phase in which we will search for previous or current scientific work related to the main topic of this project.
+    During this module time, we will carry out a research phase in which we will search for previous or current scientific work related to this project the main topic. 
     \item \textbf{Module 3 - Design \& implementation}
     
-    The objectives of this activity are to carry out the tasks necessary for the design and development of the project according to the chosen scientific methodology. During this period, the progress made will be documented in order to complement the project document. 
+    The objectives of this activity are to implement the tasks necessary for the project's design and development according to the chosen scientific methodology. During this period, the progress made on it will be documented in order to complement the project document. 
     \item \textbf{Module 4 - Document redaction}
     
-    The purpose of this activity is to prepare all the materials required for the presentation and final assessment of the TFM (Master's Thesis). These materials include:
+    This action's purpose is to prepare all the materials required for the presentation and final TFM (Master's Thesis) assessment. These materials include:
     
     \begin{enumerate}
         \item The Master's Thesis document
@@ -125,10 +129,10 @@ The project has been structured in \textbf{five phases} or modules, which in tur
 
     \item \textbf{Module 5 - Project defence}
     
-    Finally, the final step of the Master's Thesis is to defend it before a board of examiners.
+    Finally, the last step of the Master's Thesis is to defend it before a board of examiners.
 \end{itemize}
 
-The following table shows each of the phases, the start and end dates, as well as the estimated effort.
+The following table shows each of the phases, namely: the start and end dates, as well as the estimated effort.
 
 
 \begin{table}[H]
@@ -156,7 +160,7 @@ The time evolution of the project is shown by the following Gantt graph.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[scale=0.43]{images/TFM_Planing.jpg}
-        \caption{Gantt chart of the Master's final project}
+        \caption{Master's final project Gantt's chart}
     \label{fig:Gantt}    
     \end{center}
 \end{figure}
