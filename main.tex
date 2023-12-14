@@ -4,7 +4,7 @@
 
 % Bibliography package
 %\usepackage{hypernat} %substitute for cite that allows hyperlinks
-\usepackage{natbib} % substitute for 'hypernat' that works on Windows.
+\usepackage[numbers] {natbib} % substitute for 'hypernat' that works on Windows.
 %\usepackage[backend=biber,
 %    style=numeric]{biblatex}
 %\addbibresource{referencias.bib} %Imports bibliography file
@@ -25,6 +25,7 @@
 \usepackage{booktabs}
 
 \usepackage[hidelinks]{hyperref}
+\usepackage{wrapfig}
 
 
 % general settings
@@ -67,6 +68,12 @@ citecolor=blue,
 % abstract
 \input{0_resumen.tex}
 \newpage
+% State of the art
+%\input{2_StateOfTheArt}
+%\newpage
+% Design & implementation
+%\input{3_Design and implementation}
+%\newpage
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{}}
@@ -108,12 +115,17 @@ citecolor=blue,
 \input{1_introduccion.tex}
 
 \input{2_StateOfTheArt}
+
+\input{3_Design and implementation}
+
+\input{4_Conclusion}
+
 %%%%%%%%%%%%%%%%
 % bibliography %
 %%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{Bibliography}
 %\bibliographystyle{plain} % Original style of template. 
-\bibliographystyle{unsrt}
+\bibliographystyle{unsrtnat}
 \bibliography{referencias}
 %\printbibliography
 

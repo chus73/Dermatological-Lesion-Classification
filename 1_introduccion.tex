@@ -1,8 +1,19 @@
 \chapter{Introduction}
-\label{chapter:introduction}
+\label{chapter: introduction}
 
 %%% SECTION
 
+Skin diseases such as skin cancer,  affect a large number of people around the world. Many of them are associated with a social stigma because the lesions look impressive causing rejection towards people having them.  Others, such as melanoma, are also associated with a high mortality rate, which is gradually decreasing thanks to advances in its early detection. Premature diagnosis, especially when the disease is in its first stages, will help to improve its prognosis and evolution. As a contribution to improving skin disease detection, this work has used convolutional neural networks to classify eight different types of skin disease. 
+The dataset used for this study is part of the 2019 International Skin Imaging Collaboration (ISIC). The previously mentioned association launches annual challenges to stimulate researchers in the detection and classification of skin diseases. In concrete, the data used in this paper relates to the eight specific skin diseases shown in figure \ref{fig: skin_lesions_sample}. The series of data have been obtained using dermoscopic techniques and they have been provided by different hospital contributions. The dermoscopic is widely used by dermatologists due that it improves the diagnosis of lesions compared with the naked eye.
+
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[scale=0.5]{images/Introduccion/skin_lesion_sample.png}
+        \caption{Skin lesions sample}
+    \label{fig: skin_lesions_sample}    
+    \end{center}
+\end{figure}
 
 
 \section{Motivation}
@@ -15,10 +26,10 @@ This journey towards the elaboration of this exciting work on dermoscopic classi
 Artificial Intelligence (AI) is bringing about a fourth industrial revolution that is already affecting our society. In concrete, its incorporation into medicine has a very significant impact on different medical areas (\cite{luciaclemares_que_2023} y \cite{apd_aplicaciones_IA_Medicina}) such as:
 
 \begin{itemize}
-    \item \textbf{A more accurate and organised diagnosis}: The use of advanced search techniques on large medical data sets allows for more accurate and reliable diagnostic. 
+    \item \textbf{A more accurate and organized diagnosis}: The use of advanced search techniques on large medical data sets allows for more accurate and reliable diagnostics. 
     \item \textbf{Faster and more efficient drug development}: Accelerating the research and development of new drugs.
-    \item \textbf{Personalised care}: AI can customise treatment plans for each patient's individual needs optimising, at the same time, effectiveness and minimising side effects.
-    \item \textbf{Images diagnostic more accurate and faster}. The worldwide name of AI will be recognised henceforth in this work as Deep networks. A part of these networks is specialised image recognition. They have a pattern detection capability that is by far superior to any human being. They can also make a diagnosis with very little delay. For the aforementioned reasons, it will be an essential tool for improving patient care and treatment. 
+    \item \textbf{Personalised care}: AI can customize treatment plans for each patient's individual needs optimizing, at the same time, effectiveness and minimizing side effects.
+    \item \textbf{Images diagnostic more accurate and faster}. The worldwide name of AI will be recognized henceforth in this work as Deep networks. A part of these networks is specialized image recognition. They have a pattern detection capability that is by far superior to any human being. They can also make a diagnosis with very little delay. For the aforementioned reasons, it will be an essential tool for improving patient care and treatment. 
 \end{itemize}
 
 This last point is the core of the scope of this project. Personally, this project is much more than a task for ending a long master's journey. This job represents a challenge because working with large image files requires pre-processed data. In addition to this, the model to be developed is a classification one that should distinguish among nine different patterns.
