@@ -17,7 +17,7 @@ The dataset used in this work is protected by the CC-BY-NC licence
 
 \vspace{1cm}
 
-This document, and its code, are licensed under Attribution-NonCommercial-NoDerivs 3.0 Spain (CC BY-NC-ND 3.0 ES) 
+This document and its code are licensed under Attribution-NonCommercial-NoDerivs 3.0 Spain (CC BY-NC-ND 3.0 ES) 
 
 \href{https://creativecommons.org/licenses/by-nc-nd/3.0/es/}{3.0 Spain of CreativeCommons}.
 
@@ -48,7 +48,7 @@ Collaborating teacher's name: & Jordi de la Torre Gallart\\
 \hline
 PRA's name: & Laura Subirats Maté\\
 \hline
-Delivery date (mm/yyyy): & 02/2024\\
+Delivery date (mm/yyyy): & 01/2024\\
 \hline
 Degree or program: & Master’s degree in data science\\
 \hline
@@ -59,7 +59,7 @@ Language of the project: & English\\
 Code repository: & https://github.com/chus73/Dermatological-lesion-classification\\
 
 \hline
-Keywords & \textit Dermatological Diagnostic, Image classification, CNN  \\
+Keywords & \textit Image classification, Transfer learning, SMOTE  \\
 \hline
 \end{tabular}
 \end{table}
@@ -76,9 +76,12 @@ Dedicado a mis pequeños, la fuente de mi alegría. Espero serviros de inspiraci
 %%%%%%%%%%%%%%%%%%%
 \chapter*{Acknowledgements}
 
-I would like to acknowledge the work of the International Sink Imaging Collaboration \cite{isic_web} in helping to reduce skin cancer mortality. 
+
+    I would like to acknowledge the work of the International Sink Imaging Collaboration \cite{isic_web} in helping to reduce skin cancer mortality. 
 
 I would also like to acknowledge the "Universitat Oberta de Catalunya" for giving me the opportunity to grow personally and professionally.
+
+To conclude this chapter of acknowledgements, I would also like to include my English teacher, Jennifer, for her patience in helping me to make progress in learning English.
 
 %%%%%%%%%%%%%%%%
 %%% ABSTRACT %%%
@@ -88,14 +91,18 @@ I would also like to acknowledge the "Universitat Oberta de Catalunya" for givin
 
 \onehalfspacing
 
-The skin is the largest organ in the body, as well as the first barrier for defending our inner organs against any aggression, besides helping the body to regulate its temperature. Considering the importance of the skin for human beings, it is necessary to examine skin lesions and because of that dermatologists use dermatoscopy, which is a device for illuminating and magnifying the area to be examined, to monitor any present injury.  
+The skin is the largest organ in the body and the first barrier for defending our inner organs against aggression, besides helping the body regulate its temperature. Considering the importance of the skin for human beings, it is necessary to examine skin lesions. Because of that, dermatologists use dermatoscopy to illuminate and magnify the area to be examined to monitor any present injury.  
 
-During recent past decades, enormous advances in AI medical field have experienced important improvements due to the use of deep networks. They are able to diagnose with reliability as well as speed. 
+In recent decades, enormous advances in the AI medical field have experienced significant improvements due to the use of deep networks. They can diagnose with reliability as well as speed. 
 
-The following project presents the use of deep learning algorithms in order to classify nine different diagnoses such as melanoma, basal cell carcinoma, vascular lesion and others of this kind.
+The following project presents the use of deep learning algorithms in order to classify eight different diagnoses, such as melanoma, basal cell carcinoma, vascular lesion, and others of this kindIn this study, we design and test two of today's most commonly used convolutional networks in the context of skin lesion classification, using the 2019 ISIC dataset. This dataset presented data quality challenges, including resolution variations and very significant inter-class imbalance. To address the problem of dataset imbalance, we implemented two strategies: an under-sampling of the samples and an over-sampling of the minority classes. Synthetic minorities (SMOTE) were used to enrich the minority classes, resulting in a 20 \% increase in the total number of images processed.
+
+Transfer learning techniques using EfficientNet B0 and ResNet50 were employed for model training, demonstrating significant improvements in classification metrics during the transfer learning. In particular, ResNet50 showed higher performance when trained on the SMOTE-enriched dataset, which can be attributed to its more profound architecture benefiting from a larger dataset.
+
+This research contributes insights into optimizing skin lesion classification through data preprocessing, transfer learning, and model selection, paving the way for future enhancements in dermatological image analysis.
 
 
 
 \vspace{1.5cm}
 
-\textbf{Keywords}: dermatoscopy, carcinoma, skin lesion classification, CNN.
+\textbf{Keywords}: transfer learning, SMOTE, skin lesion classification, unbalance dataset.

@@ -4,7 +4,8 @@
 
 % Bibliography package
 %\usepackage{hypernat} %substitute for cite that allows hyperlinks
-\usepackage[numbers] {natbib} % substitute for 'hypernat' that works on Windows.
+%\usepackage[numbers] {natbib} % substitute for 'hypernat' that works on Windows.
+\usepackage{natbib} % substitute for 'hypernat' that works on Windows.
 %\usepackage[backend=biber,
 %    style=numeric]{biblatex}
 %\addbibresource{referencias.bib} %Imports bibliography file
@@ -23,6 +24,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
 
 \usepackage[hidelinks]{hyperref}
 \usepackage{wrapfig}
@@ -125,7 +127,8 @@ citecolor=blue,
 %%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{Bibliography}
 %\bibliographystyle{plain} % Original style of template. 
-\bibliographystyle{unsrtnat}
+%\bibliographystyle{unsrtnat}
+\bibliographystyle{unsrt}
 \bibliography{referencias}
 %\printbibliography
 

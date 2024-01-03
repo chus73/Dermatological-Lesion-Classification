@@ -8,17 +8,17 @@
 
 %% License
 @misc{cc_by_nc_license,
-        key = {cc_by_nc license}, 
-	title = {{CC} {BY}-{NC} 4.0 Deed {\textbar} Attribution-{NonCommercial} 4.0 International {\textbar} Creative Commons},
-	url = {https://creativecommons.org/licenses/by-nc/4.0/},
+    key = {cc_by_nc license}, 
+	title = {{CC} {BY}-{NC} 4.0 Deed Attribution-{NonCommercial} 4.0 International Creative Commons},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, {https://creativecommons.org/licenses/by-nc/4.0/}},
 	urldate = {2023-10-10},
 }
 
 %% Acknowledgements
 @misc{isic_web,
-        key = {International Skin Imaging Collaboration},
+    key = {International Skin Imaging Collaboration},
 	title = {{ISIC} {\textbar} International Skin Imaging Collaboration},
-	url = {https://www.isic-archive.com},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, {https://www.isic-archive.com}},
 	abstract = {{ISIC} is improving skin cancer diagnosis by promoting standards in skin imaging, gathering and sharing dermatologic images, \& engaging clinicians \& computer vision researchers},
 	titleaddon = {{ISIC}},
 	urldate = {2023-10-08},
@@ -30,7 +30,7 @@
 
 @misc{luciaclemares_que_2023,
 	title = {¿Qué beneficios tiene la Inteligencia Artificial en la medicina?},
-	url = {https://www.telefonica.com/es/sala-comunicacion/blog/que-beneficios-tiene-la-inteligencia-artificial-en-la-medicina/},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55},{https://www.telefonica.com/es/sala-comunicacion/blog/que-beneficios-tiene-la-inteligencia-artificial-en-la-medicina/}},
 	abstract = {El uso de la Inteligencia Artificial en la medicina permite crear modelos de aprendizaje automático para personalizar los tratamientos de los pacientes},
 	titleaddon = {Telefónica},
 	author = {luciaclemares},
@@ -43,9 +43,10 @@
 %% State of the ART
 
 @misc{apd_aplicaciones_IA_Medicina,
-        key = {aplicaciones reales IA en medicina},
+    key = {aplicaciones reales IA en medicina},
 	title = {Aplicaciones reales de la inteligencia artificial en la medicina},
-	url = {https://www.apd.es/aplicaciones-inteligencia-artificial-en-medicina/},
+	note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, 
+	{https://www.apd.es/aplicaciones-inteligencia-artificial-en-medicina/}},
 	abstract = {¿Conoces los efectos de la inteligencia artificial en la medicina? Descubre todos los beneficios que puede aportar y sus aplicaciones más novedosas},
 	titleaddon = {{APD} España},
 	urldate = {2023-10-09},
@@ -66,7 +67,11 @@
   keywords={},
   doi={10.1109/TITB.2012.2212282},
   ISSN={1558-0032},
-  month={Nov},}
+  month={Nov},
+  note = {{Journal: IEEE Transactions on Information Technology in Biomedicine}, 
+        {doi: 10.1109/TITB.2012.2212282}, 
+        {issn: 1558-0032}},  
+}
 
 @ARTICLE{6803866,
   author={Celebi, M. Emre and Zornberg, Azaria},
@@ -79,9 +84,9 @@
   doi={10.1109/JSYST.2014.2313671}}
 
 
-@online{noauthor_what_nodate,
+@misc{noauthor_what_nodate,
 	title = {What is Deep Learning? {\textbar} {IBM}},
-	url = {https://www.ibm.com/topics/deep-learning},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, \url{https://www.ibm.com/topics/deep-learning}},
 	shorttitle = {What is Deep Learning?},
 	abstract = {Deep learning simulates our brain, helping systems learn to identify objects and perform complex tasks with increasing accuracy without human intervention.},
 	urldate = {2023-10-21},
@@ -91,12 +96,12 @@
 
 @online{noauthor_what_nodate-1,
 	title = {What are Convolutional Neural Networks? {\textbar} {IBM}},
-	url = {https://www.ibm.com/topics/convolutional-neural-networks},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, \url{https://www.ibm.com/topics/convolutional-neural-networks}},
 	shorttitle = {What are Convolutional Neural Networks?},
 	abstract = {Learn how convolutional neural networks use three-dimensional data to for image classification and object recognition tasks.},
 	urldate = {2023-10-21},
 	langid = {english},
-	keywords = {State of Art, TFM},
+	keywords = {State of Art, TFM}
 }
 
 @article{wells_medical_1998,
@@ -111,6 +116,11 @@
 	date = {1998-04-01},
     year = {1998},
 	keywords = {State of Art, TFM},
+    note = {
+        {issn: 0360-3016},
+	   {doi: 10.1016/S0360-3016(98)00035-2},
+	    {Journal: {INTERNATIONAL} {JOURNAL} {OF} {RADIATION} {ONCOLOGY} {BIOLOGY} {PHYSICS}}
+    },
 }
 
 @inproceedings{lee_machine_2009,
@@ -211,7 +221,7 @@
 
 @misc{le_building_2012,
 	title = {Building high-level features using large scale unsupervised learning},
-	url = {http://arxiv.org/abs/1112.6209},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, {http://arxiv.org/abs/1112.6209}},
 	abstract = {We consider the problem of building high-level, class-specific feature detectors from only unlabeled data. For example, is it possible to learn a face detector using only unlabeled images? To answer this, we train a 9-layered locally connected sparse autoencoder with pooling and local contrast normalization on a large dataset of images (the model has 1 billion connections, the dataset has 10 million 200x200 pixel images downloaded from the Internet). We train this network using model parallelism and asynchronous {SGD} on a cluster with 1,000 machines (16,000 cores) for three days. Contrary to what appears to be a widely-held intuition, our experimental results reveal that it is possible to train a face detector without having to label images as containing a face or not. Control experiments show that this feature detector is robust not only to translation but also to scaling and out-of-plane rotation. We also find that the same network is sensitive to other high-level concepts such as cat faces and human bodies. Starting with these learned features, we trained our network to obtain 15.8\% accuracy in recognizing 20,000 object categories from {ImageNet}, a leap of 70\% relative improvement over the previous state-of-the-art.},
 	number = {{arXiv}:1112.6209},
 	publisher = {{arXiv}},
@@ -251,6 +261,12 @@
 	author = {Abuzaghleh, Omar and Barkana, Buket D. and Faezipour, Miad},
 	year = {2015},
 	keywords = {State of Art, TFM},
+    note = {
+        {issn: 2168-2372}, 
+	   {doi: 10.1109/JTEHM.2015.2419612}, 
+	   {Journal: {IEEE} {JOURNAL} {OF} {TRANSLATIONAL} {ENGINEERING} {IN} {HEALTH} {AND} {MEDICINE}}, 
+	    
+    }
 }
 
 
@@ -268,6 +284,11 @@
 	date = {2023-06},
     year = {2023},
 	keywords = {State of Art, TFM},
+    note = {
+       {issn: 0765-0019},
+        {doi: 10.18280/ts.400330},
+        {Journal: Traitement du Signal}
+    }
 }
 
 
@@ -275,8 +296,10 @@
 	title = {An expert system for the detection of cervical cancer cells using knowledge-based image analyzer},
 	volume = {8},
 	issn = {0933-3657},
-	url = {https://www.sciencedirect.com/science/article/pii/0933365795000216},
-	doi = {https://doi.org/10.1016/0933-3657(95)00021-6},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55},\url{https://www.sciencedirect.com/science/article/pii/0933365795000216},
+	{doi: https://doi.org/10.1016/0933-3657(95)00021-6},
+    {Journal: Artificial Intelligence in Medicine}             
+           },
 	abstract = {Analyzing for abnormalities of cell images in the cervix uteri provides a basis for reducing deaths and morbidity from cervical cancer through detection of potentially cancerous cells, provision of prompt advice and opportunities for follow-up and treatments. However, cytopathology is usually based on subjective interpretation of morphological features. Arbitrary criteria have to be devised for their classifications. Subjective interpretations of such criteria are likely to result in diagnostic shifts and consequently disagreement occurs between different interpreters. This article presents a novel approach to the composition of segmentation and diagnosis processes for biomedical image analysis. A prototype expert system has been developed to provide an objective and reliable tool to gynaecologists. Special image analyzing techniques are used and a set of knowledge sources is designed. The expert system employs a robust control strategy which minimizes the amount of domain-specific control knowledge. It has been proved to work effectively in the detection of cervical cancer.},
 	pages = {67--90},
 	number = {1},
@@ -289,6 +312,11 @@
 @article{rodrigues_new_2020,
 	title = {A new approach for classification skin lesion based on transfer learning, deep learning, and {IoT} system},
 	volume = {136},
+    note ={{issn: 0167-8655}, 
+                 {doi: 10.1016/j.patrec.2020.05.019},
+                 {journal: {PATTERN} {RECOGNITION} {LETTERS}},
+                {pages: 8--15}             
+          }, 
 	issn = {0167-8655},
 	doi = {10.1016/j.patrec.2020.05.019},
 	pages = {8--15},
@@ -343,7 +371,7 @@
 	keywords = {State of Art, TFM, Transfer learning},
 }
 
-@article{talavera-martinez_hair_2021,
+@misc{talavera-martinez_hair_2021,
 	title = {Hair Segmentation and Removal in Dermoscopic Images Using Deep Learning},
 	volume = {9},
 	issn = {2169-3536},
@@ -353,9 +381,15 @@
 	author = {Talavera-Martinez, Lidia and Bibiloni, Pedro and Gonzalez-Hidalgo, Manuel},
 	year = {2021},
 	keywords = {State of Art, TFM, hair filter},
+    note = {
+        {issn: 2169-3536}, 
+	   {doi: 10.1109/ACCESS.2020.3047258}, 
+	   {pages: 2694--2704}, 
+	   {Journal: {IEEE} {ACCESS}},
+    },
 }
 
-@article{bardou_hair_2022,
+@misc{bardou_hair_2022,
 	title = {Hair removal in dermoscopy images using variational autoencoders},
 	volume = {28},
 	issn = {0909-752X},
@@ -367,9 +401,14 @@
 	date = {2022-05},
     year= {2022},
 	keywords = {State of Art, TFM, hair filter},
+    note = {
+        {issn: 0909-752X},
+	  {doi: 10.1111/srt.13145},
+	    {Journal: {SKIN} {RESEARCH} {AND} {TECHNOLOGY}},
+    }
 }
 
-@article{kaur_hairlines_2022,
+@misc{kaur_hairlines_2022,
 	title = {Hairlines removal and low contrast enhancement of melanoma skin images using convolutional neural network with aggregation of contextual information},
 	volume = {76},
 	issn = {1746-8094},
@@ -379,11 +418,16 @@
 	date = {2022-07},
     year= {2022},
 	keywords = {State of Art, TFM, hair filter},
+    note = {
+        {issn: 1746-8094}, 
+	   {doi: 10.1016/j.bspc.2022.103653}, 
+	  {Journal: {BIOMEDICAL} {SIGNAL} {PROCESSING} {AND} {CONTROL}},
+    }
 }
 
 @misc{roy_effects_2023,
 	title = {Effects of Degradations on Deep Neural Network Architectures},
-	url = {http://arxiv.org/abs/1807.10108},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55},{http://arxiv.org/abs/1807.10108}},
 	abstract = {Deep convolutional neural networks ({CNN}) have massively influenced recent advances in large-scale image classification. More recently, a dynamic routing algorithm with capsules (groups of neurons) has shown state-of-the-art recognition performance. However, the behavior of such networks in the presence of a degrading signal (noise) is mostly unexplored. An analytical study on different network architectures toward noise robustness is essential for selecting the appropriate model in a specific application scenario. This paper presents an extensive performance analysis of six deep architectures for image classification on six most common image degradation models. In this study, we have compared {VGG}-16, {VGG}-19, {ResNet}-50, Inception-v3, {MobileNet} and {CapsuleNet} architectures on Gaussian white, Gaussian color, salt-and-pepper, Gaussian blur, motion blur and {JPEG} compression noise models.},
 	number = {{arXiv}:1807.10108},
 	publisher = {{arXiv}},
@@ -398,7 +442,7 @@
 
 @misc{laina_deeper_2016,
 	title = {Deeper Depth Prediction with Fully Convolutional Residual Networks},
-	url = {http://arxiv.org/abs/1606.00373},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55},{http://arxiv.org/abs/1606.00373}},
 	abstract = {This paper addresses the problem of estimating the depth map of a scene given a single {RGB} image. We propose a fully convolutional architecture, encompassing residual learning, to model the ambiguous mapping between monocular images and depth maps. In order to improve the output resolution, we present a novel way to efficiently learn feature map up-sampling within the network. For optimization, we introduce the reverse Huber loss that is particularly suited for the task at hand and driven by the value distributions commonly present in depth maps. Our model is composed of a single architecture that is trained end-to-end and does not rely on post-processing techniques, such as {CRFs} or other additional refinement steps. As a result, it runs in real-time on images or videos. In the evaluation, we show that the proposed model contains fewer parameters and requires fewer training data than the current state of the art, while outperforming all approaches on depth estimation. Code and models are publicly available.},
 	number = {{arXiv}:1606.00373},
 	publisher = {{arXiv}},
@@ -412,9 +456,9 @@
 	keywords = {Computer Science - Computer Vision and Pattern Recognition, State of Art, TFM},
 }
 
-@online{wong_what_2021,
+@misc{wong_what_2021,
 	title = {What is Residual Connection?},
-	url = {https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55},
+	note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}},
 	abstract = {A technique for training very deep neural networks},
 	titleaddon = {Medium},
 	author = {Wong, Wanshun},
@@ -426,11 +470,11 @@
 }
 
 
-@article{shiri_comprehensive_nodate,
+@misc{shiri_comprehensive_nodate,
 	title = {A Comprehensive Overview and Comparative Analysis on Deep Learning Models: {CNN}, {RNN}, {LSTM}, {GRU}},
 	abstract = {Deep learning ({DL}) has emerged as a powerful subset of machine learning ({ML}) and artificial intelligence ({AI}), outperforming traditional {ML} methods, especially in handling unstructured and large datasets. Its impact spans across various domains, including speech recognition, healthcare, autonomous vehicles, cybersecurity, predictive analytics, and more. However, the complexity and dynamic nature of real-world problems present challenges in designing effective deep-learning models. Consequently, several deep learning models have been developed to address different problems and applications. In this article, we conduct a comprehensive survey of various deep learning models, including Convolutional Neural Networks ({CNNs}), Recurrent Neural Networks ({RNNs}), Generative Models, Deep Reinforcement Learning ({DRL}), and Deep Transfer Learning. We examine the structure, applications, benefits, and limitations of each model. Furthermore, we perform an analysis using three publicly available datasets: {IMDB}, {ARAS}, and Fruit-360. We compare the performance of six renowned deep learning models: {CNN}, Simple {RNN}, Long Short-Term Memory ({LSTM}), Bidirectional {LSTM}, Gated Recurrent Unit ({GRU}), and Bidirectional {GRU}.},
 	author = {Shiri, Farhad Mortezapour and Perumal, Thinagaran and Mustapha, Norwati and Mohamed, Raihani},
-    doi = {10.48550/arXiv.2305.17473},
+    note= {{10.48550/arXiv.2305.17473}},
     year = {2023},
 	langid = {english},
 	keywords = {State of Art, TFM},
@@ -439,7 +483,7 @@
 @article{chen_review_2021,
 	title = {Review of Image Classification Algorithms Based on Convolutional Neural Networks},
 	volume = {13},
-	doi = {10.3390/rs13224712},
+	note = {\doi{doi: 10.3390/rs13224712}, \journaltitle{journaltitle: Remote sensing}},
 	number = {22},
 	journaltitle = {Remote sensing},
 	author = {Chen, Leiyu and Li, Shaobo and Bai, Qiang and Yang, Jing and Jiang, Sanlong and Miao, Yanming},
@@ -451,7 +495,7 @@
 @article{shorten_survey_2019,
 	title = {A survey on Image Data Augmentation for Deep Learning},
 	volume = {6},
-	doi = {10.1186/s40537-019-0197-0},
+	note = {\doi{doi: 10.1186/s40537-019-0197-0}, \journaltitle{journaltitle: Journal of big data}},
 	number = {1},
 	journaltitle = {Journal of big data},
 	author = {Shorten, Connor and Khoshgoftaar, Taghi M.},
@@ -464,39 +508,146 @@
 @misc{dataset_ref_1,
     author = {Tschandl P. and Rosendahl C.  and Kittler H.},
     title = {The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions},
-    note = {Sci. Data 5, 180161 doi.10.1038/sdata.2018.161 (2018)},
-    url = {https://challenge.isic-archive.com/data/#2019},
+    note = {\url{https://challenge.isic-archive.com/data/#2019}, 
+           Sci. Data 5, 180161 doi.10.1038/sdata.2018.161 (2018)},
     year= {2018},
 }
 
 @misc{dataset_ref_2,
     author = {Noel C. F. Codella and David Gutman and M. Emre Celebi and Brian Helba and Michael A. Marchetti and Stephen W. Dusza and Aadi Kalloo and Konstantinos Liopyris and Nabin Mishra and Harald Kittler and Allan Halpern},
     title = {Skin Lesion Analysis Toward Melanoma Detection: A Challenge at the 2017 International Symposium on Biomedical Imaging (ISBI), Hosted by the International Skin Imaging Collaboration (ISIC)},
-    note = {arXiv:1710.05006},
     year = {2017},
-    url = {https://challenge.isic-archive.com/data/#2019}
+    note = {{arXiv:1710.05006}, \url{https://challenge.isic-archive.com/data/#2019}}
 }
 
 @misc{dataset_ref_3,
     author = {Marc Combalia  and Noel C. F. Codella  and Veronica Rotemberg and Brian Helba and Veronica Vilaplana and Ofer Reiter and Allan C. Halpern and Susana Puig and Josep Malvehy},
     title = {BCN20000: Dermoscopic Lesions in the Wild},
-    note = {arXiv:1908.02288},
     year = {2019},
-    url = {https://challenge.isic-archive.com/data/#2019}
+    note = {{arXiv:1908.02288}, \url{https://challenge.isic-archive.com/data/#2019}}
 }
 
 @misc{optimizers1,
     author = {Luis Velasco},
     title = {Optimizadores en redes neuronales profundas: un enfoque práctico},
-    note = {Medium},
     year = {2020},
-    url = {https://velascoluis.medium.com/optimizadores-en-redes-neuronales-profundas-un-enfoque-pr%C3%A1ctico-819b39a3eb5}
+    note = {{Medium}, \url{https://velascoluis.medium.com/optimizadores-en-redes-neuronales-profundas-un-enfoque-pr%C3%A1ctico-819b39a3eb5}}
 }
 
 @misc{SGDwithMomentum,
     author = {Vitaly Bushaev},
     title = {Stochastic Gradient Descent with momentum},
-    note = {Medium},
     year = {2017},
-    url = {https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d}
+    note = {{Medium}, \url{https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d}}
+}
+
+%% EfficientNet
+@misc{tan_efficientnet_2020,
+	title = {{EfficientNet}: Rethinking Model Scaling for Convolutional Neural Networks},
+	note = {{version: 5}, \url{http://arxiv.org/abs/1905.11946}},
+	doi = {10.48550/arXiv.1905.11946},
+	shorttitle = {{EfficientNet}},
+	abstract = {Convolutional Neural Networks ({ConvNets}) are commonly developed at a fixed resource budget, and then scaled up for better accuracy if more resources are available. In this paper, we systematically study model scaling and identify that carefully balancing network depth, width, and resolution can lead to better performance. Based on this observation, we propose a new scaling method that uniformly scales all dimensions of depth/width/resolution using a simple yet highly effective compound coefficient. We demonstrate the effectiveness of this method on scaling up {MobileNets} and {ResNet}. To go even further, we use neural architecture search to design a new baseline network and scale it up to obtain a family of models, called {EfficientNets}, which achieve much better accuracy and efficiency than previous {ConvNets}. In particular, our {EfficientNet}-B7 achieves state-of-the-art 84.3\% top-1 accuracy on {ImageNet}, while being 8.4x smaller and 6.1x faster on inference than the best existing {ConvNet}. Our {EfficientNets} also transfer well and achieve state-of-the-art accuracy on {CIFAR}-100 (91.7\%), Flowers (98.8\%), and 3 other transfer learning datasets, with an order of magnitude fewer parameters. Source code is at https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet.},
+	number = {{arXiv}:1905.11946},
+	publisher = {{arXiv}},
+	author = {Tan, Mingxing},
+	urldate = {2023-12-24},
+	date = {2020-09-11},
+	eprinttype = {arxiv},
+	eprint = {1905.11946 [cs, stat]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Statistics - Machine Learning, {TFM}, building},
+}
+
+%% ResNet
+@misc{medium_EfficientNet,
+    author = {Vardan Agarwal},
+    title = {Complete Architectural Details of all EfficienNet Models},
+    year = {2020},
+    note = {{Medium}, \url{https://towardsdatascience.com/complete-architectural-details-of-all-efficientnet-models-5fd5b736142}}
+}
+
+@misc{ResNet50_2015,
+	title = {Deep Residual Learning for Image Recognition},
+	note = {\url{http://arxiv.org/abs/1512.03385}},
+	doi = {10.48550/arXiv.1512.03385},
+	abstract = {Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the {ImageNet} dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than {VGG} nets but still having lower complexity. An ensemble of these residual nets achieves 3.57\% error on the {ImageNet} test set. This result won the 1st place on the {ILSVRC} 2015 classification task. We also present analysis on {CIFAR}-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28\% relative improvement on the {COCO} object detection dataset. Deep residual nets are foundations of our submissions to {ILSVRC} \& {COCO} 2015 competitions, where we also won the 1st places on the tasks of {ImageNet} detection, {ImageNet} localization, {COCO} detection, and {COCO} segmentation.},
+	number = {{arXiv}:1512.03385},
+	publisher = {{arXiv}},
+	author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+	urldate = {2023-12-26},
+	date = {2015-12-10},
+    year = {2015},
+	eprinttype = {arxiv},
+	eprint = {1512.03385 [cs]},
+	keywords = {Building, Computer Science - Computer Vision and Pattern Recognition, {TFM}},
+}
+%% SMOTE
+@misc{smote_belharar_enhancing_2023,
+	title = {Enhancing Classification Accuracy for Imbalanced Image Data Using {SMOTE}},
+	note = {\url{https://medium.com/@fatimazahra.belharar/enhancing-classification-accuracy-for-imbalanced-image-data-using-smote-41737783a720}},
+	abstract = {In the world of data analysis and machine learning, not all datasets are created equal. One common challenge that often arises is dealing…},
+	titleaddon = {Medium},
+	author = {Belharar, Fatimazahra},
+	urldate = {2023-12-27},
+	date = {2023-06-07},
+    year = 2023,
+	langid = {english},
+}
+
+@misc{smote_maklin_synthetic_2022,
+	title = {Synthetic Minority Over-sampling {TEchnique} ({SMOTE})},
+	note = {\url{https://medium.com/@corymaklin/synthetic-minority-over-sampling-technique-smote-7d419696b88c}},
+	abstract = {Synthetic Minority Over-sampling {TEchnique}, or {SMOTE} for short, is a preprocessing technique used to address a class imbalance in a…},
+	titleaddon = {Medium},
+	author = {Maklin, Cory},
+	urldate = {2023-12-27},
+	date = {2022-05-14},
+    year = 2022,
+	langid = {english},
+	keywords = {{TFM} building},
+}
+
+@article{smote_JMLR:v18:16-365,
+    author  = {Guillaume  Lema{{\^i}}tre and Fernando Nogueira and Christos K. Aridas},
+    title   = {Imbalanced-learn: A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine Learning},
+    journal = {Journal of Machine Learning Research},
+    year    = {2017},
+    volume  = {18},
+    number  = {17},
+    pages   = {1-5},
+    note = {\url{http://jmlr.org/papers/v18/16-365.html}},
+    keywords = {Building, {TFM}},
+}
+
+@misc{simonyan_very_2015,
+	title = {Very Deep Convolutional Networks for Large-Scale Image Recognition},
+	note = {\url{http://arxiv.org/abs/1409.1556}},
+	abstract = {In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our {ImageNet} Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing {ConvNet} models publicly available to facilitate further research on the use of deep visual representations in computer vision.},
+	number = {{arXiv}:1409.1556},
+	publisher = {{arXiv}},
+	author = {Simonyan, Karen and Zisserman, Andrew},
+	urldate = {2024-01-02},
+	date = {2015-04-10},
+    year = {2015},
+	eprinttype = {arxiv},
+	eprint = {1409.1556 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Conclusion, {TFM}},
+}
+
+@misc{noauthor_papers_nodate,
+	title = {Papers with Code - Vision Transformer Explained},
+	note = {\url{https://paperswithcode.com/method/vision-transformer}},
+	abstract = {The Vision Transformer, or {ViT}, is a model for image classification that employs a Transformer-like architecture over patches of the image.  An image is split into fixed-size patches, each of them are then linearly embedded, position embeddings are added, and the resulting sequence of vectors is fed to a standard Transformer encoder. In order to perform classification, the standard approach of adding an extra learnable “classification token” to the sequence is used.},
+	urldate = {2024-01-02},
+    year = {2024},
+	langid = {english},
+	keywords = {{TFM}, conclusion},
+}
+
+@misc{noauthor_resnet101_nodate,
+	title = {resnet101 — Torchvision main documentation},
+	note = {\url{https://pytorch.org/vision/main/models/generated/torchvision.models.resnet101.html}},
+	urldate = {2024-01-02},
+    year = {2024},
+	keywords = {Conclusion, {TFM}},
 }
