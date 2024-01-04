@@ -279,6 +279,63 @@ As shown in figure \ref{fig: EfficientB0_hyperparameters}, training the model wi
 As shown in the graph \ref{fig: ResNet50_hyperparameters}, the process has also been performed in the second neuronal network based on ResNet50. In this grid search, we also used SGD, RMSProp, and Adam optimizers trained in the same learning rate range as in the previous process. As with the previous model, we discarded RMSprop from the outset because of the instability of the samples. In the case of SGD, training with the lowest learning rate values seems to offer stability, as does training with the Adam optimizer. However, we opted for the latter because we thought it would reach convergence faster. 
 
 \newpage
+\subsection{Evaluation Metrics}
+
+Since what is not measurable cannot be improved, we define a series of metrics that will allow us to know how well our models will classify. This will help us know the progress as we move forward with the transfer learning process throughout the development of the tests. 
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[ht]
+\centering
+\begin{tabular}{lclllccccc}
+ & \multicolumn{9}{c}{\textbf{Prediction}} \\ \cline{3-10} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{AK}} & \multicolumn{1}{c|}{\textbf{BCC}} & \multicolumn{1}{c|}{\textbf{BKL}} & \multicolumn{1}{c|}{\textbf{DF}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{MEL}} & \multicolumn{1}{c|}{\textbf{NV}} & \multicolumn{1}{c|}{\textbf{SCC}} & \multicolumn{1}{c|}{\textbf{VASC}} \\ \cline{2-10} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{AK}} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{2-10} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{BCC}} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}FP\_1} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{2-10} 
+\multicolumn{1}{c|}{\textbf{R}} & \multicolumn{1}{c|}{\textbf{BKL}} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}FP\_2} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{2-10} 
+\multicolumn{1}{c|}{\textbf{e}} & \multicolumn{1}{c|}{\textbf{DF}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-10} 
+\multicolumn{1}{c|}{\textbf{a}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{MEL}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFC7}FN\_1} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFC7}FN\_2} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}TP} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-10} 
+\multicolumn{1}{c|}{\textbf{l}} & \multicolumn{1}{c|}{\textbf{NV}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-10} 
+\multicolumn{1}{c|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{SCC}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} & \multicolumn{1}{l|}{} \\ \cline{2-10} 
+\multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{VASC}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}TP} \\ \cline{2-10} 
+\end{tabular}
+    \caption{Multiclass matrix example}
+    \label{tbl: Multiclass_matrix}
+\end{table}
+
+In a multiclass classification context, to visualize the successes or failures of the prediction, we compare the obtained values with the real ones in a confusion matrix, as shown in the figure \ref{tbl: Multiclass_matrix}. The main diagonal of the matrix shows the True Positives (TP). In this representation, we have focused on one of the classes (MEL) to show the False Positives (FP) or those predictions that are not correct. With the same class, we can see those images belonging to the MEL class have been classified to a different class and, therefore, will be False Negative (FN).
+
+The main metrics to be used are the following:
+
+\begin{enumerate}
+    \item \textbf{Accuracy} (Acc):  A metric that measures a model's predictions' overall level of correctness. It is calculated as the ratio of the number of correct predictions, positive and negative, to all predictions made.    
+    
+    \hspace{5cm} $Acc = \frac{(TP + TN)}{(TP + TN + FP + FN)}$    
+          
+    \item \textbf{Precision} (Prec): Measures the proportion of correctly identified positive instances among all instances identified as positive. It is calculated as the ratio of true positives to the sum of true positives and false positives.
+    
+    \hspace{5cm} $Prec = \frac{(TP)}{(TP + FP)}$
+          
+    \item \textbf{Sensitivity} (Sen): Sensitivity measures the ability of a model to identify positive cases among all true positives. It is a metric often called Recall and is calculated as the ratio of True Positive predictions to the sum of True positive and False Negative predictions.
+
+    \hspace{5cm} $Sen = Rec = \frac{(TP)}{(TP + FN)}$
+    
+    \item \textbf{Specificity} (Esp): This metric indicates the ability of a model to correctly identify negative cases out of the total number of true negatives. It is calculated as the ratio of true negative predictions to the sum of true negatives and false positives.
+
+    \hspace{5cm} $Esp = \frac{(TN)}{(TN + FP)}$
+    
+    \item \textbf{F1-score} (F1): When evaluating classifiers, trying to estimate the value of false positives and negatives is sometimes complex. The F1-score metric allows us to gain insight into classifier model performance where accuracy and Recall may not represent overall model performance. This metric is calculated as the harmonic mean between precision and Recall, and thanks to this type of calculation, it is a metric that is not as affected when there are imbalances between classes. These penalizing models have unequal performance between positive and negative class identification. 
+
+    \hspace{3cm} $F1-score = 2 * \frac{(Prec * Sen)}{(Prec + Sen)} = \frac{(TP)}{(TP + \frac{1}{2}(FP + FN)}$
+
+    In a multiclass classification context such as the one we are working on in this article, the calculation is performed with the One-vs-Rest (OvR) strategy, in which the value is calculated for each class separately. Subsequently, the values are averaged to extract the overall value of the metric. However, we are faced with three possibilities: Performing an arithmetic average across all classes, in which case we speak of F1 calculated with Macro Average. Another option would be to use a weighted average to penalize possible imbalances in the dataset. This second case is known as the F1 Weighted Average. The third case, perhaps the most interesting of all, sums the values of TP, FP, and FN for all classes, using the second of the formulas for the calculation. This metric we will use in our study is called the F1-score for Micro Average.
+    
+    
+\end{enumerate}
+    
+
+
 \subsection{Skin lesion classification with EfficientNet B0}
 Traditionally, high accuracy in image classification has been achieved by increasing the number of layers in convolutional neural networks (ConNets). In 2020, Mingxing Tan and Quoc V. Le rethink the scaling-up process in this type of usage in the article "\textit{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}" \cite{tan_efficientnet_2020}. To understand the process, we need to remember that any neural network can be characterized as three dimensions: depth, width, and resolution. In the paper cited above, the authors observe empirically that \textbf{these dimensions are not independent} and they are related to each other. Therefore, when scaling the network, \textbf{it is necessary to maintain a balance between the dimensions to achieve greater accuracy and efficiency}. For this reason, the authors propose a new composite scaling method with the aim of being able to scale the dimensions in a uniform way and thus increase the network efficiency. Finally, the work succeeds in obtaining a new neural network family model called EfficientNets, composed of eight variations from B0 to B7. Each variation increases the number of layers, from 213 in EfficientNet B0 to 817 in version B7 \cite{medium_EfficientNet}. 
 
