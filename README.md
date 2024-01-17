@@ -13,7 +13,7 @@ The following project presents the use of deep learning algorithms in order to c
 
 This research contributes to a new understanding of skin lesion classification through data preprocessing, transfer learning, and model selection, paving the way for future enhancements in dermatological image analysis and early diagnosis. Finally, it also contributes exploring the use of a statistic technique like SMOTE to solve an imbalanced dataset challenge. 
 
-**Table of contents:**
+## Table of contents:
 
 * [Introduction](#readme.rd)
 * [Master's thesis](#instalación)
