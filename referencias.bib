@@ -10,7 +10,8 @@
 @misc{cc_by_nc_license,
     key = {cc_by_nc license}, 
 	title = {{CC} {BY}-{NC} 4.0 Deed Attribution-{NonCommercial} 4.0 International Creative Commons},
-    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, \url{https://creativecommons.org/licenses/by-nc/4.0/}},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, \url{https://creativecommons.org/licenses/by-nc/4.0/}
+           },
 	urldate = {2023-10-10},
 }
 
@@ -70,7 +71,7 @@
   month={Nov},
   note = { 
         {DOI: 10.1109/TITB.2012.2212282}, 
-        {ISSN: 1558-0032}},
+        {ISSN: 1558-0032}}
 }
 
 @ARTICLE{6803866,
@@ -148,6 +149,10 @@
 	date = {2012-11},
     year= {2012},
 	keywords = {State of Art, TFM},
+    Note = {
+        {ISSN: 1089-7771},
+	  {DOI: 10.1109/TITB.2012.2212282}
+    }
 }
 
 @article{dreiseitl_comparison_2001,
@@ -194,6 +199,10 @@
 	date = {2014-09},
     year= {2014},
 	keywords = {State of Art, TFM},
+    Note = {
+        {ISSN: 1932-8184},
+	  {DOI: 10.1109/JSYST.2014.2313671}
+    }
 }
 
 @article{beuscart_expert_1997,
@@ -226,7 +235,6 @@
 
 @misc{le_building_2012,
 	title = {Building high-level features using large scale unsupervised learning},
-    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, \url{http://arxiv.org/abs/1112.6209}},
 	abstract = {We consider the problem of building high-level, class-specific feature detectors from only unlabeled data. For example, is it possible to learn a face detector using only unlabeled images? To answer this, we train a 9-layered locally connected sparse autoencoder with pooling and local contrast normalization on a large dataset of images (the model has 1 billion connections, the dataset has 10 million 200x200 pixel images downloaded from the Internet). We train this network using model parallelism and asynchronous {SGD} on a cluster with 1,000 machines (16,000 cores) for three days. Contrary to what appears to be a widely-held intuition, our experimental results reveal that it is possible to train a face detector without having to label images as containing a face or not. Control experiments show that this feature detector is robust not only to translation but also to scaling and out-of-plane rotation. We also find that the same network is sensitive to other high-level concepts such as cat faces and human bodies. Starting with these learned features, we trained our network to obtain 15.8\% accuracy in recognizing 20,000 object categories from {ImageNet}, a leap of 70\% relative improvement over the previous state-of-the-art.},
 	number = {{arXiv}:1112.6209},
 	publisher = {{arXiv}},
@@ -237,15 +245,8 @@
 	eprinttype = {arxiv},
 	eprint = {1112.6209 [cs]},
 	keywords = {Computer Science - Machine Learning},
+    note = {\url{https://towardsdatascience.com/what-is-residual-connection-efb07cab0d55}, \url{http://arxiv.org/abs/1112.6209}}
 }
-%% Revisar x duplicado
-@article{Le2011BuildingHF, 
-    title={Building high-level features using large scale unsupervised learning}, 
-    author={Quoc V. Le and Marc'Aurelio Ranzato and Rajat Monga and Matthieu Devin and Gregory S. Corrado and Kai Chen and Jeffrey Dean and A. Ng}, 
-    journal={2013 IEEE International Conference on Acoustics, Speech and Signal Processing}, 
-    year={2011}, 
-    pages={8595-8598}, 
-    url={https://api.semanticscholar.org/CorpusID:206741597} }
 
 @ARTICLE{7792699,
   author={Yu, Lequan and Chen, Hao and Dou, Qi and Qin, Jing and Heng, Pheng-Ann},
@@ -255,7 +256,11 @@
   volume={36},
   number={4},
   pages={994-1004},
-  DOI={10.1109/TMI.2016.2642839}}
+  DOI={10.1109/TMI.2016.2642839},
+    note = {
+        {DOI: 10.1109/TMI.2016.2642839}
+    }
+}
 
 @article{abuzaghleh_noninvasive_2015,
 	title = {Noninvasive Real-Time Automated Skin Lesion Analysis System for Melanoma Early Detection and Prevention},
@@ -338,6 +343,9 @@
 	editor = {Li, Z and Yuan, C and Lu, J and Kerre, {EE}},
 	year = {2020},
 	keywords = {State of Art, TFM, Transfer learning},
+    note = {
+        {ISBN: 978-981-122-333-4}
+    }
 }
 
 @inproceedings{abbes_deep_2021,
@@ -576,6 +584,72 @@
 	keywords = {Building, Computer Science - Computer Vision and Pattern Recognition, {TFM}},
 }
 %% SMOTE
+
+@article{chawla_smote_2002,
+	title = {{SMOTE}: Synthetic Minority Over-sampling Technique},
+	volume = {16},
+	rights = {Copyright (c)},
+	issn = {1076-9757},
+	url = {https://www.jair.org/index.php/jair/article/view/10302},
+	doi = {10.1613/jair.953},
+	shorttitle = {{SMOTE}},
+	abstract = {An approach to the construction of classifiers from    imbalanced datasets is described. A dataset is imbalanced if the    classification categories are not approximately equally    represented. Often real-world data sets are predominately composed of    ``normal'' examples with only a small percentage of ``abnormal'' or    ``interesting'' examples. It is also the case that the cost of    misclassifying an abnormal (interesting) example as a normal example    is often much higher than the cost of the reverse    error. Under-sampling of the majority (normal) class has been proposed    as a good means of increasing the sensitivity of a classifier to the    minority class. This paper shows that a combination of our method of    over-sampling the minority (abnormal) class and under-sampling the    majority (normal) class can achieve better classifier performance (in    {ROC} space) than only under-sampling the majority class.  This paper    also shows that a combination of our method of over-sampling the    minority class and under-sampling the majority class can achieve    better classifier performance (in {ROC} space) than varying the loss    ratios in Ripper or class priors in Naive Bayes. Our method of    over-sampling the minority class involves creating synthetic minority    class examples.  Experiments are performed using C4.5, Ripper and a    Naive Bayes classifier. The method is evaluated using the area under    the Receiver Operating Characteristic curve ({AUC}) and the {ROC} convex    hull strategy.},
+	pages = {321--357},
+	journal = {Journal of Artificial Intelligence Research},
+	author = {Chawla, N. V. and Bowyer, K. W. and Hall, L. O. and Kegelmeyer, W. P.},
+	urldate = {2024-01-13},
+	date = {2002-06-01},
+    year = {2002},
+	langid = {english},
+	keywords = {{SMOTE}, {StateOfTheArt}, {TFM}},
+    Note = {
+        {ISSN: 1076-9757},
+	   {\url{https://www.jair.org/index.php/jair/article/view/10302}},
+	   {DOI: 10.1613/jair.953}
+    }
+}
+
+@article{moreno_smote-i_2009,
+	title = {{SMOTE}-I: mejora del algoritmo {SMOTE} para balanceo de clases minoritarias},
+	shorttitle = {{SMOTE}-I},
+	abstract = {Resumen. Las técnicas de minería de datos están encaminadas a desarrollar algoritmos que sean capaces de tratar y analizar datos de forma automática con objeto de extraer de cualquier tipo de información subyacente en dichos datos. El problema del desbalanceo de los datos consiste en la predominancia de ciertos valores en los datos y la escasez o ausencia de otros que dificulta o impide la extracción de información. En este trabajo se presenta un nuevo algoritmo basado en {SMOTE} y llamado {SMOTE}-I que mejora al original con la la base de datos analizada. Palabras clave: {SMOTE}, {ENN}, desbalanceo de datos.},
+	author = {Moreno, J and Rodriguez, Daniel and Sicilia, M. and Riquelme, José and Ruiz, Y},
+    Journal = { Jornadas de Ingeniería del Software y Bases de Datos, Vol. 3, No. 1, 2009},
+	date = {2009-01-01},
+    year = {2009},
+	keywords = {{SMOTE}, {StateOfTheArt}, {TFM}},
+    Note = {
+        {
+        {ISSN: 1988–3455}, 
+        {\url{https://www.researchgate.net/publication/229045207_SMOTE-I_mejora_del_algoritmo_SMOTE_para_balanceo_de_clases_minoritarias}}
+        }
+    }
+}
+@article{basgall_smote-bd_2018,
+	title = {{SMOTE}-{BD}: An Exact and Scalable Oversampling Method for Imbalanced Classification in Big Data},
+	volume = {18},
+	issn = {1666-6038, 1666-6046},
+	url = {https://journal.info.unlp.edu.ar/JCST/article/view/1122},
+	doi = {10.24215/16666038.18.e23},
+	shorttitle = {{SMOTE}-{BD}},
+	abstract = {The volume of data in today’s applications has meant a change in the way Machine Learning issues are addressed. Indeed, the Big Data scenario involves scalability constraints that can only be achieved through intelligent model design and the use of distributed technologies. In this context, solutions based on the Spark platform have established themselves as a de facto standard.},
+	pages = {e23},
+	number = {3},
+	journal = {Journal of Computer Science and Technology},
+	shortjournal = {{JC}\&{ST}},
+	author = {Basgall, María José and Hasperué, Waldo and Naiouf, Marcelo and Fernández, Alberto and Herrera, Francisco},
+	urldate = {2024-01-13},
+	date = {2018-12-12},
+    year = {2018},
+	langid = {english},
+	keywords = {{SMOTE}, {StateOfTheArt}, {TFM}},
+    Note = {
+        {ISSN: 1666-6038, 1666-6046},
+	   {\url{https://journal.info.unlp.edu.ar/JCST/article/view/1122}},
+	   {DOI: 10.24215/16666038.18.e23}
+    }
+}
+
 @misc{smote_belharar_enhancing_2023,
 	title = {Enhancing Classification Accuracy for Imbalanced Image Data Using {SMOTE}},
 	note = {\url{https://medium.com/@fatimazahra.belharar/enhancing-classification-accuracy-for-imbalanced-image-data-using-smote-41737783a720}},
@@ -699,6 +773,11 @@
 	shortjournal = {Atención Primaria},
 	author = {Carmena-Ramón, Rafael and Mateu-Puchades, Almudena and Santos-Alarcón, Sergio and Lucas-Truyols, Sofía},
 	year = {2017},
+    Note = {
+       {ISSN: 02126567},
+	   \url{https://www.elsevier.es/es-revista-atencion-primaria-27-articulo-queratosis-actinica-nuevo-concepto-actualizacion-S0212656717301440},
+	   {DOI: 10.1016/j.aprim.2017.01.004}
+    }
 }
 
 
@@ -742,6 +821,23 @@
 	langid = {english},
     note = {
         \url{https://www.msdmanuals.com/professional/dermatologic-disorders/benign-skin-tumors,-growths,-and-vascular-lesions/vascular-lesions-of-the-skin},
-        {{MSD} Manual Professional Edition},
+        {{MSD} Manual Professional Edition}
+    }
+}
+
+@misc{alberto_funciones_2021,
+	title = {Funciones de error con Entropia: Cross Entropy y Binary Cross Entropy},
+	url = {https://rubialesalberto.medium.com/funciones-de-error-con-entropia-cross-entropy-y-binary-cross-entropy-8df8442cdf35},
+	shorttitle = {Funciones de error con Entropia},
+	abstract = {En este artículo vamos a descifrar el funcionamiento de la entropía cruzada, la entropía cruzada binaria y programar ambas funciones en…},
+	titleaddon = {Medium},
+	author = {Alberto, Rubiales},
+	urldate = {2024-01-07},
+	date = {2021-10-04},
+    year = {2021},
+	langid = {english},
+	keywords = {{TFM}, building},
+    note = {
+        \url{https://rubialesalberto.medium.com/funciones-de-error-con-entropia-cross-entropy-y-binary-cross-entropy-8df8442cdf35}
     }
 }

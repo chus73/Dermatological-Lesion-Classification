@@ -8,7 +8,7 @@ Based on the previously mentioned architecture, different neural networks will b
 
 %%% SECTION
 
-\section{Dataset description}
+\section{Exploratory analysis}
 
 \begin{wrapfigure}{r}{0.45\textwidth} 
     \vspace{-20pt}
@@ -24,7 +24,7 @@ In this section, the \textit{ISIC Challenge dataset}  2019 was used.  It is form
 \newpage
 As these are real patient images, we also encounter other shapes and features, such as hair, lesion markers, and other objects that can distort the sample.
 
-The dataset used for this research implies a larger quantity of one specific kind of images that causes an imbalance concerning the proportion of the total images quantity in each class, being Nevus, the one with the biggest class with more than 10.000 images. This, compared with DF only having 215 images, causes an enormous disparity. Figure \ref{fig:class_distribution_for_train} shows how the different classes are distributed across the dataset. 
+The dataset used for this research implies a larger quantity of one specific kind of images that causes an imbalance concerning the proportion of the total images quantity in each class, being Nevus, the one with the biggest class with more than 10.000 images. Compared with DF only having 215 images, this causes an enormous disparity. Figure \ref{fig:class_distribution_for_train} shows how the different classes are distributed across the dataset. 
 
 \begin{figure}[ht]
     \centering
@@ -86,7 +86,7 @@ As we have seen above in the description of the dataset, it is extremely importa
             \end{center}
         \end{figure}
         
-    In the picture, we can see the result of applying the trimming in each of the classes. The number of images to keep per class is determined by the number of minority classes, the limit will be set at 250 images per class.
+    In the picture, we can see the result of applying the trimming in each of the classes. The number of images to keep per class is determined by the number of minority classes, and the limit will be set at 250 images per class.
         
 
     \item \textbf{Synthetic image generation} 
@@ -190,11 +190,23 @@ As we have seen throughout this thesis, convolutional neural networks (ConNet) a
     \end{center}
 \end{figure}
 
-The figure \ref{fig: Ensamble_Model_RNet50} shows the two stages discussed above. For the feature extractor stage, also called the \textbf{base model}, the RedNet50 network map used in this project was chosen. The other network, \textit{EfficientNet}, changes the number of convolutional blocks used and their composition, but for didactic purposes, the construction scheme follows the same pattern. 
+The figure \ref{fig: Ensamble_Model_RNet50} shows the two stages discussed above. For the feature extractor stage, also called the \textbf{base model}, the RedNet50 network map used in this project was chosen. The other network, \textit{EfficientNet}, changes the number of convolutional blocks used and their composition, but the construction scheme follows the same pattern for didactic purposes. 
 
-The \textbf{base model}, based on ResNet50, consists of five convolutional blocks, followed by a batch normalizing layer and activated by ReLu. \textbf{Batch normalization} layers calculate the mean and standard deviation of a batch during the training process, ensuring the stability of the network by centering and normalizing each mini-batch of data, which is placed in front of an activation function, as shown in the figure. In contrast, the \textbf{ReLu activation} function is used to bring the network into non-linearity. This function, which is very common in neural networks, is responsible for initializing the negative values of the layer's input function to zero. On the other hand, each block contains a convolutional layer with a 7x7 kernel, a stride set to two and no padding, a batch normalization layer, a layer applying the ReLu function, both described above, and a \textbf{max-pooling layer}. This last layer is responsible for reducing the dimensionality by selecting the maximum value of the region in which it operates, which, in the case of the convolutional blocks of ResNet50, corresponds to a 3x3 matrix.
+The \textbf{base model}, based on ResNet50, consists of five convolutional blocks, followed by a batch normalizing layer and activated by ReLu. \textbf{Batch normalization} layers calculate the mean and standard deviation of a batch during the training process, ensuring the stability of the network by centering and normalizing each mini-batch of data, which is placed in front of an activation function, as shown in the figure. In contrast, the \textbf{ReLu activation} function is used to bring the network into non-linearity. This function, which is very common in neural networks, is responsible for initializing the negative values of the layer's input function to zero. On the other hand, each block contains a convolutional layer with a 7x7 kernel, a stride set to two and no padding, a batch normalization layer, a layer applying the ReLu function, both described above and a \textbf{max-pooling layer}. This last layer is responsible for reducing the dimensionality by selecting the maximum value of the region in which it operates, which, in the case of the convolutional blocks of ResNet50, corresponds to a 3x3 matrix.
 
-The second stage of the model, the classification module, has the function of assigning labels to the output results of the feature extractor. This stage consists of four layers: The operation of the first of these, \textbf{Global Average Polling 2D}, is very similar to Max Pooling above, except that it calculates the average of all input values for each channel. This reduces the dimensionality to the number of channels in the input layer. The second layer, the Bach normalization, was explained in the previous section. Following this is a \textbf{dropout layer}, which randomly deactivates certain neurons during each iteration. This introduces randomness to the training process and reduces the risk of overfitting. In this paper, the dropout rate has been set to 0.2, meaning that 20\% of the neurons will be deactivated. Finally, the classification module's last layer utilizes the \textbf{softmax} function to convert input values, known as logits, into probabilities. This ensures that the sum of the values of each class equals unity. The softmax function is commonly used in multi-class classification problems, such as the one analyzed in this paper. Its output facilitates the interpretation of the network output.
+The second stage of the model, the classification module, assigns labels to the feature extractor's output results. This stage consists of four layers: The operation of the first of these, \textbf{Global Average Polling 2D}, is very similar to Max Pooling above, except that it calculates the average of all input values for each channel. This reduces the dimensionality of the number of channels in the input layer. The second layer, the Bach normalization, was explained in the previous section. Following this is a \textbf{dropout layer}, which randomly deactivates certain neurons during each iteration. This introduces randomness to the training process and reduces the risk of overfitting. In this paper, the dropout rate has been set to 0.2, meaning that 20\% of the neurons will be deactivated. Finally, the classification module's last layer utilizes the \textbf{softmax} function to convert input values, known as logits, into probabilities. This ensures that the sum of the values of each class equals unity. The softmax function is commonly used in multi-class classification problems, such as the one analyzed in this paper. Its output facilitates the interpretation of the network output.
+
+To conclude this section, we will discuss one parameter that must be chosen to train the networks. This is the \textbf{loss function}, and it is used to quantify the difference between the model predictions and the validation data. The result of this function is used to adjust the neural network weights at each training step, aiming to minimize the error obtained by the function. The function chosen for this purpose, and one of the most common in the world of deep learning, is the \textbf{categorical cross-entropy} \cite{alberto_funciones_2021}, which is described by the following formula. 
+
+\hspace{3cm}
+
+\hspace{5cm} $CrossEntropy = - \frac{1}{n} \sum_{j=1}^{n} \sum_{i=1}^{c} y_i log y'_i$
+
+\hspace{3cm}
+
+This function requires the label values to be \textbf{encoded by one-hot}. This type of encoding assigns the value 1 to the correct class, leaving the rest of the classes at 0. The nomenclature used in the above formula is as follows: "\textit{i}" represents the class, "\textit{c}" the total number of classes, "\textit{$y_i$}" is the value of the actual class and "\textit{$y'$}" the value of the predicted class. Due to the use of one-hot encoding, the calculation will be applied only to the real class, and to the value to be obtained at the output of the softmax function, reducing to zero the remaining sums of the polynomial belonging to the rest of the other classes.  
+
+
 
 %\newpage
 %% Transfer learning
@@ -236,7 +248,7 @@ The parameters that will be adjusted in our work, and that are generally used in
 \begin{enumerate}
     \item \textbf{Learning Rate}: It controls how much the model parameters are adjusted at each training step. A high learning rate can cause the model to converge quickly, but there is also a risk the network may be lost in a global minimum and it will not be able to complete its learning. Besides that, a low learning rate may lead to slow convergence or no convergence at all.
 
-    \item \textbf{Epochs number}: This parameter controls the number of times the learning algorithm iterates over the entire training data set. During each epoch, the weights of the neural network are updated in an attempt to minimize the Loss function, thus improving the network learning process for each epoch. The most common values for this parameter are 16, 32, and 64, it will always be expressed in multiples of two.
+    \item \textbf{Epochs number}: This parameter controls the number of times the learning algorithm iterates over the entire training data set. During each epoch, the weights of the neural network are updated in an attempt to minimize the Loss function, thus improving the network learning process for each epoch. The most common values for this parameter are 16, 32, and 64, and it will always be expressed in multiples of two.
 
     \item \textbf{Batch Size}: The number of training samples used in a model update iteration. Its value and the dataset size determine the number of iterations required to complete an epoch. If its value is low, the model may not have enough time to learn the data patterns. On the contrary, a high epoch value may cause the model to be susceptible of overfitting by incorporating data noise into the adjustment weight.
 
@@ -277,6 +289,7 @@ As shown in figure \ref{fig: EfficientB0_hyperparameters}, training the model wi
 \end{figure}
 
 As shown in the graph \ref{fig: ResNet50_hyperparameters}, the process has also been performed in the second neuronal network based on ResNet50. In this grid search, we also used SGD, RMSProp, and Adam optimizers trained in the same learning rate range as in the previous process. As with the previous model, we discarded RMSprop from the outset because of the instability of the samples. In the case of SGD, training with the lowest learning rate values seems to offer stability, as does training with the Adam optimizer. However, we opted for the latter because we thought it would reach convergence faster. 
+
 
 \newpage
 \subsection{Evaluation Metrics}
@@ -337,7 +350,7 @@ The main metrics to be used are the following:
 
 
 \subsection{Skin lesion classification with EfficientNet B0}
-Traditionally, high accuracy in image classification has been achieved by increasing the number of layers in convolutional neural networks (ConNets). In 2020, Mingxing Tan and Quoc V. Le rethink the scaling-up process in this type of usage in the article "\textit{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}" \cite{tan_efficientnet_2020}. To understand the process, we need to remember that any neural network can be characterized as three dimensions: depth, width, and resolution. In the paper cited above, the authors observe empirically that \textbf{these dimensions are not independent} and they are related to each other. Therefore, when scaling the network, \textbf{it is necessary to maintain a balance between the dimensions to achieve greater accuracy and efficiency}. For this reason, the authors propose a new composite scaling method with the aim of being able to scale the dimensions in a uniform way and thus increase the network efficiency. Finally, the work succeeds in obtaining a new neural network family model called EfficientNets, composed of eight variations from B0 to B7. Each variation increases the number of layers, from 213 in EfficientNet B0 to 817 in version B7 \cite{medium_EfficientNet}. 
+Traditionally, high accuracy in image classification has been achieved by increasing the number of layers in convolutional neural networks (ConNets). In 2020, Mingxing Tan and Quoc V. Le rethink the scaling-up process in this type of usage in the article "\textit{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}" \cite{tan_efficientnet_2020}. To understand the process, we need to remember that any neural network can be characterized as three dimensions: depth, width, and resolution. In the paper cited above, the authors observe empirically that \textbf{these dimensions are not independent} and they are related to each other. Therefore, when scaling the network, \textbf{it is necessary to maintain a balance between the dimensions to achieve greater accuracy and efficiency}. For this reason, the authors propose a new composite scaling method with the aim of being able to scale the dimensions in a uniform way and thus increase the network efficiency. Finally, the work succeeds in obtaining a new neural network family model called EfficientNets, which is composed of eight variations from B0 to B7. Each variation increases the number of layers, from 213 in EfficientNet B0 to 817 in version B7 \cite{medium_EfficientNet}. 
 
 In this chapter, we will perform transfer learning using the least parameterized network of the EfficientNet family, the B0. In order to do this, we are going to follow the steps that have been described at the beginning of the chapter \ref{ch:Transfer_learning}.
 
@@ -531,7 +544,7 @@ Values with SMOTE dataset & 0.51 & 0.54 & 0.50 & 0.49 \\ \hline
 %\clearpage
 
 \subsection{Skin lesion classification with ResNet50}
-The second neural network we will use in this work is the one known as ResNet50, a deep neural network composed of 48 convolutional layers, more than one MaxPool and an average pool layer, which is one of the most popular ConNets used for image classification. This network was developed in 2015 as a result of the study "\textit{Deep Residual Learning for Image Recognition}". \cite{ResNet50_2015}, in which the authors presented a residual learning framework with a deep neural network that is easily trainable and avoids the problem of gradient descent \textbf{vanishing} as the network gets deeper. Consequently, as the number of layers increases, the neural network can learn more features, but accuracy can slowly degrade due to saturation. The concept behind this neural network is the use of the residual function, which creates a shortcut to the output of the layer by adding the output of the previous layer. At depth, the residual blocks act by feeding back the gradient, preventing fading and allowing for deeper ConNets.   
+The second neural network we will use in this work is the one known as ResNet50, a deep neural network composed of 48 convolutional layers, more than one MaxPool, and an average pool layer, which is one of the most popular ConNets used for image classification. This network was developed in 2015 as a result of the study "\textit{Deep Residual Learning for Image Recognition}". \cite{ResNet50_2015}, in which the authors presented a residual learning framework with a deep neural network that is easily trainable and avoids the problem of gradient descent \textbf{vanishing} as the network gets deeper. Consequently, as the number of layers increases, the neural network can learn more features, but accuracy can slowly degrade due to saturation. The concept behind this neural network is the use of the residual function, which creates a shortcut to the output of the layer by adding the output of the previous layer. At depth, the residual blocks act by feeding back the gradient, preventing fading and allowing for deeper ConNets.   
 
 \subsubsection{Step 1. Base model froze}
 
