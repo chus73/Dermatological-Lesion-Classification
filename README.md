@@ -1,6 +1,6 @@
 
 # Dermatological lesion prediction
-## Skin disease dermatoscopic classification using convolutional networks on unbalanced dataset
+## Skin disease dermatoscopic classification using convolutional networks on an unbalanced dataset
 
 The skin is the largest organ in the body and the first barrier for defending our inner organs against aggression, besides helping the body regulate its temperature. Considering the importance of the skin for human beings, it is necessary to examine skin lesions. Because of that, dermatologists use dermatoscopy to illuminate and magnify the area to be examined to monitor any present injury.
 
@@ -16,7 +16,7 @@ This research contributes to a new understanding of skin lesion classification t
 ## Table of contents:
 
 * [Introduction](#readme.rd)
-* [Master's thesis] ([#Dermatological_lesion_classification.pdf](https://github.com/chus73/Dermatological-Lesion-Classification/blob/main/Dermatological_lesion_classification.pdf))
+* [Master's thesis] ([#Dermatological_lesion_classification.pdf](https://onedrive.live.com/?authkey=%21ACAo05SALR65e78&id=81018B05A7F010C1%2173771&cid=81018B05A7F010C1&parId=root&parQt=sharedby&o=OneUp))
 * [Jupyter Notebooks (web version)](#uso)
 * [Video Presentation] (https://1drv.ms/v/s!AsEQ8KcFiwGBhMAj2bCsQVLPDtOZZA?e=DMKwjd)https://1drv.ms/v/s!AsEQ8KcFiwGBhMAj2bCsQVLPDtOZZA?e=DMKwjd)
 * [License](#licencia)
