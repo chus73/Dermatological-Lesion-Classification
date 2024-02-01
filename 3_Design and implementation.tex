@@ -61,7 +61,7 @@ Neural networks process data in matrix format.  The size of the dataset download
 \end{figure}
 
 \subsection{{Changing image resolution (Step 1)}}
-As we introduced in the previous chapter, images came originally in a wide variety of resolutions. According to that, it will be necessary to \textbf{reduce and reshape} them. So as to, make them to be the same resolution and square-shaped. The size is determined by the network used as the feature extractor. In this work, we will use EfficenteNet B0 and ResNet50 networks, which require an input size (224x244x3) corresponding to the width, height, and number of channels of the image.
+As we introduced in the previous chapter, images came originally in a wide variety of resolutions. According to that, it will be necessary to \textbf{reduce and reshape} them. So as to, make them to be the same resolution and square-shaped. The size is determined by the network used as the feature extractor. In this work, we will use EfficenteNet B0 and ResNet50 networks, which require an input size (224x224x3) corresponding to the width, height, and number of channels of the image.
 
 \subsection{{Image set partitioning (Step 2)}}
 The higher the number of images, the higher the memory consumption during the classification process. With small datasets, we would choose to load the matrices in memory, which would increase our models' training speed. With the data volume we manage in this job, however, we will have to choose \textbf{batch loading from disk}. To achieve this, the pipeline needs to classify the images according to their type by distributing them in different folders, both for training and validation.
